@@ -2,7 +2,7 @@
 核对表格与图表的对应关系：
   1. 表格是否就是 test set（205 行）
   2. beeswarm / dependence / interaction / waterfall 各自用的是哪批数据
-  3. 交互图的着色到底是「原始特征值」还是「SHAP 值」—— 甲方图②色标是 0-5 / 0-160
+  3. 交互图的着色到底是「原始特征值」还是「SHAP 值」—— 参照图色标为 0-5 / 0-160
 """
 import io, os, sys
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
@@ -93,7 +93,7 @@ print(f"  parity plot   : ax.scatter(y_test, y_pred_test)          → {len(X_te
 
 # === [4] 交互图着色到底是 SHAP 值还是原始值？ ===
 print("\n" + "="*78)
-print("[4] 关键：交互图的着色（甲方图②色标是 0-5 / 0-160 的原始值）")
+print("[4] 关键：交互图的着色（参照图色标为 0-5 / 0-160 的原始值）")
 print("="*78)
 i_flow, i_conc, i_time = 3, 1, 2
 for nm, j in [("acq_time", i_time), ("concentration", i_conc), ("flow_rate", i_flow)]:
@@ -102,7 +102,7 @@ for nm, j in [("acq_time", i_time), ("concentration", i_conc), ("flow_rate", i_f
     print(f"  着色源 = shap_values[:, {nm}]")
     print(f"      若为 SHAP 值 → 范围 [{shapv.min():.4f}, {shapv.max():.4f}]")
     print(f"      若为原始值   → 范围 [{raw.min():.4f}, {raw.max():.4f}]")
-    print(f"      甲方图②色标  → 0-5 (acq_time) / 0-160 (concentration)  ← 匹配【原始值】")
+    print(f"      参照图色标  → 0-5 (acq_time) / 0-160 (concentration)  ← 匹配【原始值】")
 
 # === [5] beeswarm 的横轴范围能否由 SHAP 列复现 ===
 print("\n" + "="*78)
@@ -111,7 +111,7 @@ print("="*78)
 for f, idx in shap_cols.items():
     col = orig_csv[f"SHAP_{f}"].values
     print(f"  SHAP_{f:16s} CSV 范围 [{col.min():9.2f}, {col.max():9.2f}]")
-print(f"  （甲方图①横轴 -2000 ~ 4000，与 SHAP_concentration 的范围一致）")
+print(f"  （参照图横轴 -2000 ~ 4000，与 SHAP_concentration 的范围一致）")
 
 # === [6] waterfall 的三个样本 ===
 print("\n" + "="*78)
