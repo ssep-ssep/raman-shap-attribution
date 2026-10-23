@@ -1,5 +1,5 @@
 """
-核对甲方表格与图表的对应关系：
+核对表格与图表的对应关系：
   1. 表格是否就是 test set（205 行）
   2. beeswarm / dependence / interaction / waterfall 各自用的是哪批数据
   3. 交互图的着色到底是「原始特征值」还是「SHAP 值」—— 甲方图②色标是 0-5 / 0-160
@@ -37,7 +37,7 @@ print("[1] 划分核对")
 print("="*78)
 print(f"  全部数据 n      = {len(df)}")
 print(f"  train n         = {len(X_train)}")
-print(f"  test  n         = {len(X_test)}   <- 甲方 Excel 的行数")
+print(f"  test  n         = {len(X_test)}   <- 预测集的行数")
 print(f"  205 / 1023      = {205/1023:.4f}  (test_size=0.2 → {int(1023*0.2)})")
 
 # === 加载导出的 CSV ===

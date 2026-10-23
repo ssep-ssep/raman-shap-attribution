@@ -2,14 +2,15 @@
 
 可解释性归因分析工作流：从拉曼/SERS 实验数据出发，用梯度提升回归建模，再用 SHAP 拆解「哪个参数在起作用、往哪个方向起、有没有交互」。
 
-本仓库包含完整可复现的代码、**一份合成验证数据集**（不含任何真实实验数据），以及成文的报告与汇报幻灯片。
+本仓库只包含**数据分析部分**：可复现代码与一份**合成验证数据集**（不含任何真实实验数据）。
+报告生成、docx 排版与汇报材料不在本仓库范围内。
 
 ---
 
 ## 快速开始
 
 ```bash
-git clone https://github.com/ssep-ssep/raman-shap-workflow.git
+git clone https://github.com/YOUR_ACCOUNT/raman-shap-workflow.git
 cd raman-shap-workflow
 pip install -r requirements.txt
 
@@ -19,8 +20,6 @@ python src/generate_synthetic_data.py --out data/Datanew-8.31.xlsx
 # 1. 跑 4 个分析子集，产出图 + 指标 + CSV（输出到 reports/Datanew-8.31/）
 python src/raman_shap_analysis.py
 
-# 2. 生成 8 份 docx 报告（需要先跑过一次分析）
-python src/build_docx.py
 ```
 
 路径全部相对于仓库根目录，也可通过环境变量覆盖：
@@ -120,12 +119,7 @@ python src/generate_synthetic_data.py --out data/Datanew-8.31.xlsx
 ├── data/
 │   └── Datanew-8.31.xlsx          # 合成测试数据包（1023 行）
 ├── docs/
-│   ├── method_section.md          # 论文方法段（中英混排，含完整指标表）
 │   └── no_laziness_prompts.md     # 驱动 coding agent 不「只说不做」的提示词模板
-├── reports/
-│   └── Datanew-8.31_Package_v2/   # 完整报告包（含图、表、docx）
-├── slides/
-│   └── SHAP_attribution_deck.pptx # 汇报幻灯片（16 页）
 ├── LICENSE                        # MIT
 ├── .gitattributes
 └── .gitignore
