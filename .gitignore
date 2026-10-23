@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# matplotlib / shap caches
+.mplcache/
+.mplconfig/
+shap_cache/
+
+# Runtime artifacts
+*.log
+_run*.log
+*.tmp
+
+# OS / editor
+.DS_Store
+Thumbs.db
+~$*
+.idea/
+.vscode/
+
+# Secrets — never commit
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx

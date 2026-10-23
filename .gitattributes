@@ -1,0 +1,25 @@
+# Normalize line endings: the Python tooling here and the CSV outputs are
+# compared byte-wise in the verification scripts.
+* text=auto eol=lf
+
+*.py           text eol=lf
+*.md           text eol=lf
+*.txt          text eol=lf
+*.csv          text eol=lf
+*.json         text eol=lf
+*.yml          text eol=lf
+*.yaml         text eol=lf
+*.xml          text eol=lf
+*.svg          text eol=lf
+.gitattributes text eol=lf
+.gitignore     text eol=lf
+
+# Binary — never normalize
+*.xlsx binary
+*.docx binary
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.pptx binary
+*.zip  binary
+*.pdf  binary
