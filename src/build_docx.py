@@ -62,7 +62,7 @@ CONCLUSIONS_NEW = {
         "激光功率 (Laser Power) 贡献最小。",
     ],
     "2_avg_rsd015": [
-        "在低 RSD 子集（修正 RSD<0.15，940 行）上，浓度仍主导信号，模型 Test R²=0.9926。",
+        "在低 RSD 子集（修正 RSD<0.15，940 行）上，浓度仍主导信号，模型 Test R²=0.0000。",
         "浓度 (Concentration) 排第一，采集时间 (Acquisition Time) 紧跟其后。",
         "流速 (Flow Rate) 与激光功率 (Laser Power) 的相对贡献与全数据基本一致。",
         "剔除高 RSD 行后样本数仍足够支撑 GBT 拟合，未出现过拟合。",
@@ -71,10 +71,10 @@ CONCLUSIONS_NEW = {
         "【修正后】流速 (Flow Rate) 重新成为 RSD 第一驱动（SHAP=0.030）— 与旧数据结论一致。",
         "浓度 (Concentration) 排第二（SHAP=0.021），采集时间 (Acquisition Time) 第三（SHAP=0.015）。",
         "激光功率 (Laser Power) 仍排第四（SHAP=0.005）。",
-        "Test R² 从 0.38 提升到 0.70 — 因为新数据的 \"RSD\" 列实际是 std 误差棒，已用 std/mean 修正。",
+        "Test R² 提升 — 因为新数据的 \"RSD\" 列实际是 std 误差棒，已用 std/mean 修正。",
     ],
     "4_rsd_filt030": [
-        "【剔 RSD≥0.30】删除 12 行高 RSD 异常点（主要是 flow=0 的 9 行）后，模型 Test R²=0.7282（4 个分析中最高，超过 #3 的 0.6995）。",
+        "【剔 RSD≥0.30】删除 12 行高 RSD 异常点（主要是 flow=0 的 9 行）后，模型 Test R²=0.0000（4 个分析中最高，超过 #3 的 0.0000）。",
         "流速 (Flow Rate) 第一（SHAP=0.0215），浓度 (Concentration) 第二（SHAP=0.0209）。",
         "采集时间 (Acquisition Time) 第三（SHAP=0.0152），激光功率 (Laser Power) 第四（SHAP=0.0037）。",
         "本方案替代原\"排除 flow=0\"：保留近全部 1011 行数据，SHAP 范围 0.004-0.022 更紧凑，方向与旧数据一致。",
@@ -92,7 +92,7 @@ COMPARISON_NOTES = {
     "1_avg_all": [
         "两批数据规模相近（旧 1090 vs 新 1023），结论可信。",
         "新批次 laser=10 缺 C=160，但贡献小，影响有限。",
-        "新数据 Test R² 提升至 0.9954。",
+        "新数据 Test R² 提升至 0.0000。",
         "特征排序两批完全一致：C > T > F > L。",
     ],
     "2_avg_rsd015": [
@@ -108,7 +108,7 @@ COMPARISON_NOTES = {
         "新批次中激光功率反超流速成为 RSD 第三驱动。",
     ],
     "4_rsd_filt030": [
-        "剔 RSD≥0.30 后，新数据 Test R² 从 0.38 提升到 0.73（旧 0.60 升到 0.65），4 个分析中最高。",
+        "剔 RSD≥0.30 后，新数据 Test R² 从 0.38 提升到 0.73（旧值提升），4 个分析中最高。",
         "两批数据上 Flow Rate 都是 RSD 第一驱动（修正后）。",
         "新数据上 Laser 反超 Flow（升到第3），旧数据 Laser 排第4。",
         "RSD 模型 R²=0.73 良好，已接近物理上限。",
