@@ -10,7 +10,7 @@
 ## 快速开始
 
 ```bash
-git clone https://github.com/YOUR_ACCOUNT/raman-shap-workflow.git
+git clone https://github.com/ssep-ssep/raman-shap-attribution.git
 cd raman-shap-workflow
 pip install -r requirements.txt
 
