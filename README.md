@@ -118,8 +118,6 @@ python src/generate_synthetic_data.py --out data/Datanew-8.31.xlsx
 │   └── verify_table_mapping.py    # 验证表格列与图表的对应关系
 ├── data/
 │   └── Datanew-8.31.xlsx          # 合成测试数据包（1023 行）
-├── docs/
-│   └── no_laziness_prompts.md     # 驱动 coding agent 不「只说不做」的提示词模板
 ├── LICENSE                        # MIT
 ├── .gitattributes
 └── .gitignore
